@@ -14,15 +14,110 @@
       padding: 0;
       font-family: sans-serif;
       background-color: #ededed;
+      --meme-card-wrapper-padding: 20px;
+
     }
+    p2-card[accent-color="green"]{
+      --meme-car-accent-color: lightgreen;
+
+    }
+    p2-card[accent-color="blue"]{
+      --meme-car-accent-color: lightblue;
+
+    }
+    p2-card[accent-color="red"]{
+      --meme-car-accent-color: pink;
+
+    }
+
+    p2-card::part(card) { /*styling technique (not cascading) */
+      margin: 100px;
+    }
+
+      
+    
   </style>
-  <title>project2-act</title>
+  <title>p2-card</title>
 </head>
 
 <body>
-  <project2-act></project2-act>
+  <div class="buttons"> <!-- use part with this -->
+    <button class="duplicate">duplicate</button>
+    <button class="modifytitle">modify title</button>
+    <button id="deletelastcard">delete</button>
+    <button data-toggle-btn>toggle</button>
+    <button class="bg-color">change color</button>
+  </div>
 
-  <script type="module" src="./src/project2-act.js"></script>
+
+  <div id="app"> <!-- global scope!! -->
+    <p2-card>
+      <div>
+      Amazon Cognito
+      </div>
+    </p2-card>
+  </div>
+
+
+  <script type="module">
+    import "./src/p2-card.js";
+  </script>
+
+  <!--<script type="module" src="./src/meme-card-ashnaa.js"></script> -->
+  <script>
+
+    document.body.addEventListener('open-changed', (e) => {
+      document.querySelector('button[data-toggle-btn]').innerText = e.detail.value ? 'hide details' : 'show details';
+      console.log('change-open-state', e.detail, e.target);
+    })
+
+document.querySelector('button[data-toggle-btn]').addEventListener('click', (e) => {
+  const card = document.querySelector('p2-card');
+  card.opened = !card.opened;
+});
+
+    //duplicate the first item 
+  document.querySelector('.duplicate').addEventListener('click', function(e) {
+    const itemToClone = document.querySelector('p2-card').cloneNode(true);
+    document.querySelector('#app').appendChild(itemToClone);
+});
+
+// modify name of 1st item
+document.querySelector('.modifytitle').addEventListener('click', function(e) {
+  let name = prompt("name the dog!!!");
+  if (name) {
+    document.querySelector('p2-card').name = name;
+  }
+});
+
+// delete the last item
+document.querySelector('#deletelastcard').addEventListener('click', function(e) {
+  let wantsTo = confirm("Are you sure?");
+  if (wantsTo) {
+    if (document.querySelector('#app :last-child') !== document.querySelector('p2-card')) {
+      document.querySelector('#app :last-child').remove();      
+    }
+    else {
+      alert("borzoi is forever.");
+    }
+  }
+});
+
+const changecolor = document.querySelector(".bg-color");
+changecolor.addEventListener("click", function (e){
+  //random items in an array
+  const colors = ["pink", "blue", "green"];
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  document.querySelector("p2-card").accentColor = randomColor;
+
+
+});
+
+
+
+
+
+
+  </script>
 </body>
-
 </html>
