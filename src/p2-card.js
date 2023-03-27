@@ -46,6 +46,15 @@ export class P2Card extends LitElement {
   width: 400px;
 }
 
+input {
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-bottom: 1px solid black;
+  transition: all .3s ease-in-out;
+}
+
+
 
 .header {
   text-align: center;
@@ -104,7 +113,7 @@ details{
 
   constructor() {
     super();
-    this.name = "Amazon Cognito";
+    this.name = "Amazon Cognito"; //change this for every instance
     this.detail = "";
     this.opened = true;
   }
@@ -143,19 +152,20 @@ details{
   render() {
     return html`
     
+    <input type="text" id="getme" placeholder="Search" />
+
 <div class="card" part="card">
   <div class="card-container">
+    
   
 
 <!--<img class="image" src="$(meme)"/> -->
   <div class="header">
   <h3>${this.name}</h3>
-  <meme-maker image-url="${meme}"
- top-text="${this.top}"
- bottom-text="${this.bottom}"
- >
+  
 
-</meme-maker>
+  
+
   <h4>${this.detail}</h4>
     <details class="details" .open="${this.opened}" @toggle="${this.toggleEvent}">
       <summary>Details</summary>
