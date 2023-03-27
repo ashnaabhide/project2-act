@@ -17,18 +17,7 @@
       --meme-card-wrapper-padding: 20px;
 
     }
-    p2-card[accent-color="green"]{
-      --meme-car-accent-color: lightgreen;
-
-    }
-    p2-card[accent-color="blue"]{
-      --meme-car-accent-color: lightblue;
-
-    }
-    p2-card[accent-color="red"]{
-      --meme-car-accent-color: pink;
-
-    }
+    
 
     p2-card::part(card) { /*styling technique (not cascading) */
       margin: 100px;
@@ -42,11 +31,8 @@
 
 <body>
   <div class="buttons"> <!-- use part with this -->
-    <button class="duplicate">duplicate</button>
-    <button class="modifytitle">modify title</button>
-    <button id="deletelastcard">delete</button>
+   
     <button data-toggle-btn>toggle</button>
-    <button class="bg-color">change color</button>
   </div>
 
 
