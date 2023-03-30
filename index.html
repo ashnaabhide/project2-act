@@ -30,10 +30,7 @@
 </head>
 
 <body>
-  <div class="buttons"> <!-- use part with this -->
-   
-    <button data-toggle-btn>toggle</button>
-  </div>
+
 
 
   <div id="app"> <!-- global scope!! -->
@@ -67,37 +64,7 @@ document.querySelector('button[data-toggle-btn]').addEventListener('click', (e) 
   card.opened = !card.opened;
 });
 
-    //duplicate the first item 
-  document.querySelector('.duplicate').addEventListener('click', function(e) {
-    const itemToClone = document.querySelector('p2-card').cloneNode(true);
-    document.querySelector('#app').appendChild(itemToClone);
-});
-
-// modify name of 1st item
-document.querySelector('.modifytitle').addEventListener('click', function(e) {
-  let name = prompt("name the dog!!!");
-  if (name) {
-    document.querySelector('p2-card').name = name;
-  }
-});
-
-// delete the last item
-document.querySelector('#deletelastcard').addEventListener('click', function(e) {
-  let wantsTo = confirm("Are you sure?");
-  if (wantsTo) {
-    if (document.querySelector('#app :last-child') !== document.querySelector('p2-card')) {
-      document.querySelector('#app :last-child').remove();      
-    }
-    else {
-      alert("borzoi is forever.");
-    }
-  }
-});
-
-
-
-
-
+    
 
 
   </script>
