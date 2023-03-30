@@ -94,28 +94,9 @@ export class P2Card extends LitElement {
 
   constructor() {
     super();
-    this.badges = [
-      { 
-        "name": "Amazon Cognito",
-        "detail": "stuff", 
-        "image": "https://badgesapp.psu.edu/uploads/badge/image/623/Cognito.png"
-
-
-      }, 
-      {
-        "name": "Amazon I AM",
-        "detail": "things", 
-        "image": "https://badgesapp.psu.edu/uploads/badge/image/618/AWS-IAM-Exploitation.png.png"
-
-      }, 
-      {
-        "name": "Amazon Cognito",
-        "detail": " ", 
-        "image": ""
-
-      }, 
-    ]
-    
+    this.name="";
+    this.details="";
+  
     this.opened = true;
   }
 
