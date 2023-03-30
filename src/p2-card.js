@@ -30,82 +30,69 @@ export class P2Card extends LitElement {
   static get styles(){
     return css`
     
-    p2-card::part(card){
-      margin: 100px;
-    }
-
-
-      .card-container {
-        width: 3px 3px 3px 50px;
-        border: 2px solid lightblue;
-        display: inline-flex; 
+    
+ .wrapper {
+        
+        background-color: #3e98d3;
+        color: white;
+        padding: 2px 2px 2px 20px;
+        text-align: center-left;
+        width: 800px;
+        height: auto;
+        border-radius: 5px;
+      }
+      .title{
+        width: auto;
+        color: black;
+        font-family: sans-serif;
+        background-color: lightblue;
+        text-align: center;
+      }
+      
+      .body{
+        font-family: sans-serif;
+        background-color: #cfe6f4;
+        padding: auto;
+        text-align: left;
+        height: auto;
+      }
+      
+      .img {
+        width: 20px;
+        text-align: left;
         
       }
-
-.image {
-  width: 400px;
-}
-
-input {
-  font-size: 20px;
-  font-weight: bold;
-  border: none;
-  border-bottom: 1px solid black;
-  transition: all .3s ease-in-out;
-}
-
-
-
-.header {
-  text-align: center;
-  font-weight: bold;
-  font-size: 2rem; /* scales relatively */
-  
-  
-}
-
-.header h3:hover {
-  font-style: italic; 
-  font-size: 1.1em;
-}
-
-.header h3, 
-.header h4{
-  transition: .3s ease-in-out all;
-  margin: 16px;
-  font-style: normal;
-  
-}
-.buttons button:focus, 
-.buttons button:hover {
-  background-color: rgba(200, 0, 50, .5);
-}
-/*
-.buttons button:active {
-  background-color: rgba(200, 0, 200, .5); - shades in the part of the project you're not actively working on
-}
-*/
- 
-.buttons {
-  display: block;
-  
-}
-button {
-  padding: 12px;
-  font-size: 32px;
-}
-
-
-
-details{
-  margin-left: 24px;
-  padding: 10px;
-}
-.details summary {
-  font-size: 20px;
-  font-weight: bold;
-  
-}
+      
+      input {
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+        border-bottom: 1px solid black;
+        transition: all .3s ease-in-out;
+      }
+      
+      
+      
+      .header {
+        text-align: left;
+        font-weight: bold;
+        font-size: 2rem; /* scales relatively */
+        
+        
+      }
+      
+      
+      
+      
+      
+      
+      details{
+        margin-left: 24px;
+        font-size: 10px;
+        padding: 10px;
+        text-align: left;
+      }
+      
 
     `;
   }
@@ -153,22 +140,23 @@ details{
     return html`
     
     <input type="text" id="getme" placeholder="Search" />
+    <h1 id="heading">Badges(5)</h1>
+<!--<div class="intro text">introduction</div>-->
 
-<div class="card" part="card">
-  <div class="card-container">
+<input type="text" id="getme" placeholder="Search" />
+
+  <div>
+  <div class="wrapper">
     
-  
-
 <!--<img class="image" src="$(meme)"/> -->
   <div class="header">
-  <h3>${this.name}</h3>
-  
-
-  
-
-  <h4>${this.detail}</h4>
-    <details class="details" .open="${this.opened}" @toggle="${this.toggleEvent}">
-      <summary>Details</summary>
+    <div class="title">Amazon Cognito
+      <div class="img">
+        <img src="https://badgesapp.psu.edu/uploads/badge/image/623/Cognito.png" width="100" height="100"
+            >
+      </div>
+ 
+ <details class="details" .open="${this.opened}" @toggle="${this.toggleEvent}">
       <!--
       <div>
         <p class="memeparagraph">
@@ -178,10 +166,41 @@ details{
       </div>
        -->
   </details>
- 
+      </div>
+   
+    </div>
+    </div>
   </div>
-</div>
-</div>
+
+
+<!--number 2
+
+  <div class="wrapper">
+    
+<img class="image" src="$(meme)"/> 
+  <div class="header">
+    <div class="title">Amazon I AM
+      <div class="img">
+        <img src="https://badgesapp.psu.edu/uploads/badge/image/618/AWS-IAM-Exploitation.png.png">
+            
+      </div>
+ 
+ <details class="details" .open="${this.opened}" @toggle="${this.toggleEvent}">
+      
+      <div>
+        <p class="memeparagraph">
+          <slot></slot>
+      </p>
+      
+      </div>
+       
+  </details>
+      </div>
+   
+    </div>
+    </div>
+  -->
+
     `;
   }
 }
