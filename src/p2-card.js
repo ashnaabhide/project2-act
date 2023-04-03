@@ -1,4 +1,6 @@
 import { LitElement, html, css } from 'lit';
+import "@lrnwebcomponents/simple-icon/simple-icon.js";
+import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 
 const meme=new URL('../assets/meme.jpg', import.meta.url).href;
 
@@ -141,6 +143,11 @@ export class P2Card extends LitElement {
  
   <div>
   <div class="wrapper">
+
+
+
+
+  
    
 <!--<img class="image" src="$(meme)"/> -->
    
@@ -148,7 +155,7 @@ export class P2Card extends LitElement {
   <div class="header">
     <div class="title">Amazon Cognito
       <div class="img">
-        <img src=https://badgesapp.psu.edu/uploads/badge/image/623/Cognito.png width="100" height="100"
+        <img src=https://badgesapp.psu.edu/uploads/badge/image/623/Cognito.png 
             >
       </div>
  <details class="details" .open="${this.opened}" @toggle="${this.toggleEvent}">
@@ -182,7 +189,7 @@ Approximate time to complete: 4.0 hours</slot>
   <div class="header">
     <div class="title">Amazon I AM
       <div class="img">
-        <img src=https://badgesapp.psu.edu/uploads/badge/image/618/AWS-IAM-Exploitation.png.png
+        <img src=https://badgesapp.psu.edu/uploads/badge/image/618/AWS-IAM-Exploitation.png.png 
             >
       </div>
  <details class="details" .open="${this.opened}" @toggle="${this.toggleEvent}">
