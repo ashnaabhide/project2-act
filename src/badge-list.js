@@ -32,7 +32,7 @@ class BadgeList extends LitElement{
             <!--search and filtering function-->
         </div>
         <div class="wrapper">
-        ${this.dates.map(
+        ${this.badges.map(
               badge => html`
                 <div class="card">
                 <p2-card
