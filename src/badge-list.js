@@ -106,7 +106,7 @@ class BadgeList extends LitElement{
                   title="${badge.title}"
                   image="${badge.image}" 
                     description="${badge.description}"
-                    document-link="${badge.link}"
+                    link="${badge.link}"
                     author="${badge.author}"
                     authorImage="${badge.authorImage}"
                     time="${badge.time}">
