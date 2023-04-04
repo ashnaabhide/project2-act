@@ -42,7 +42,7 @@ export class P2Card extends LitElement {
         height: auto;
         border-radius: 5px;
       }
-      
+
       .title{
         width: auto;
         color: black;
@@ -162,7 +162,7 @@ export class P2Card extends LitElement {
       </div>
       <div>
         ${this.author} 
-        <img src=${this.authorImg}>
+        <img src=${this.authorImage}>
       </div>
       ${this.time}
       ${this.steps}
