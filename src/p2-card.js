@@ -86,10 +86,6 @@ export class P2Card extends LitElement {
       }
       
       
-      
-      
-      
-      
       details{
         margin-left: 24px;
         font-size: 10px;
@@ -97,25 +93,10 @@ export class P2Card extends LitElement {
         text-align: left;
       }
       
-
     `;
   }
 
 
-  constructor() {
-    super();
-    this.name="test";
-    this.icon="www.google.com";
-    this.badgeDescription="something";
-    this.opened=false;
-    this.link="https://drive.google.com/drive/u/0/my-drive";
-    this.author="john smith";
-    this.authorImg="https://stock.adobe.com/images/happy-smiley-face-or-emoticon-line-art-icon-for-apps-and-websites/112439016";
-    this.time="4.0 hours";
-    this.steps=[ ];
-
-    
-  }
 
   toggleEvent(e) {
     console.log(this.opened);
@@ -168,15 +149,14 @@ export class P2Card extends LitElement {
    
     <!--badge 1-->
   <div class="badge">
-    <div class="name">${this.name}
-      <div class="img">
-        <img src=${this.icon}>
+    <div class="title">${this.title}
+      <div class="image">
+        <img src=${this.image}>
       </div>
  <details class="details" .open="${this.opened}" @toggle="${this.toggleEvent}">
  
       <div>
-        <p class="badgeDescription">
-          ${this.badgeDescription}
+        <p class="description">${this.description}
   
       </p>
       <div class="link">
