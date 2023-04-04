@@ -2,9 +2,6 @@ import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/simple-icon/simple-icon.js";
 import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 
-const meme=new URL('../assets/meme.jpg', import.meta.url).href;
-
-
 export class P2Card extends LitElement {
 
   static get properties() {
@@ -15,14 +12,14 @@ export class P2Card extends LitElement {
         type: String,
         reflect: true
       }, 
-      icon: {type: String},
-      badgeDescription: {
+      image: {type: String},
+      description: {
         type: String,
       }, 
       opened: {type: Boolean, reflect: true},
       link: {type: String}, 
       author: {type: String}, 
-      authorImg: {type: String}, 
+      authorImage: {type: String}, 
       time: {type: String},
       steps: {type: Array}, 
       stepDescription: {type: String}
@@ -132,9 +129,6 @@ export class P2Card extends LitElement {
   render() {
     return html`
     
-    <h1 id="heading">Badges(5)</h1>
-<!--<div class="intro text">introduction</div>-->
- 
 <input type="text" id="getme" placeholder="Search" />
  
   <div>

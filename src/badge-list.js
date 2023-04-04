@@ -104,11 +104,11 @@ class BadgeList extends LitElement{
                 <p2-card
 
                   title="${badge.title}"
-                  icon="${badge.icon}" 
+                  image="${badge.image}" 
                     description="${badge.description}"
                     document-link="${badge.link}"
-                    author-icon="${badge.author}"
-                    author="${badge.authorImg}"
+                    author="${badge.author}"
+                    authorImage="${badge.authorImage}"
                     time="${badge.time}">
                 </p2-card> 
                   </div>
