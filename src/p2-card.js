@@ -42,12 +42,15 @@ export class P2Card extends LitElement {
         height: auto;
         border-radius: 5px;
       }
+      
       .title{
         width: auto;
         color: black;
         font-family: sans-serif;
         background-color: lightblue;
-        text-align: center;
+        text-align: left;
+        font-weight:bold;
+        font-size: .6cm;
       }
       
       .body{
@@ -58,7 +61,7 @@ export class P2Card extends LitElement {
         height: auto;
       }
       
-      .img {
+      .image {
         width: 20px;
         text-align: left;
         
