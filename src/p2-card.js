@@ -132,9 +132,6 @@ export class P2Card extends LitElement {
  
 
 
-
-
-
     render() {
       return html`
     <div>
@@ -149,7 +146,7 @@ export class P2Card extends LitElement {
       <simple-icon icon="editor:bubble-chart">${this.image}</simple-icon>
       </div>
  <details class="details" .opened="${this.opened}" @toggle="${this.toggleEvent}">
- 
+ <!-- make a summary tag to remove detail word -->
       <div>
         <p class="description">${this.description}
  
