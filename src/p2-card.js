@@ -30,6 +30,10 @@ export class P2Card extends LitElement {
 
   static get styles(){
     return css`
+
+    :host{
+      display: block;
+    }
     
     
  .wrapper {
