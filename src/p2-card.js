@@ -2,9 +2,6 @@ import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/simple-icon/simple-icon.js";
 import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 
-const meme=new URL('../assets/meme.jpg', import.meta.url).href;
-
-
 export class P2Card extends LitElement {
 
   static get properties() {
@@ -15,14 +12,14 @@ export class P2Card extends LitElement {
         type: String,
         reflect: true
       }, 
-      icon: {type: String},
-      badgeDescription: {
+      image: {type: String},
+      description: {
         type: String,
       }, 
       opened: {type: Boolean, reflect: true},
       link: {type: String}, 
       author: {type: String}, 
-      authorImg: {type: String}, 
+      authorImage: {type: String}, 
       time: {type: String},
       steps: {type: Array}, 
       stepDescription: {type: String}
@@ -45,12 +42,15 @@ export class P2Card extends LitElement {
         height: auto;
         border-radius: 5px;
       }
+
       .title{
         width: auto;
         color: black;
         font-family: sans-serif;
         background-color: lightblue;
-        text-align: center;
+        text-align: left;
+        font-weight:bold;
+        font-size: .6cm;
       }
       
       .body{
@@ -61,7 +61,7 @@ export class P2Card extends LitElement {
         height: auto;
       }
       
-      .img {
+      .image {
         width: 20px;
         text-align: left;
         
@@ -86,10 +86,6 @@ export class P2Card extends LitElement {
       }
       
       
-      
-      
-      
-      
       details{
         margin-left: 24px;
         font-size: 10px;
@@ -97,25 +93,10 @@ export class P2Card extends LitElement {
         text-align: left;
       }
       
-
     `;
   }
 
 
-  constructor() {
-    super();
-    this.name="test";
-    this.icon="www.google.com";
-    this.badgeDescription="something";
-    this.opened=false;
-    this.link="https://drive.google.com/drive/u/0/my-drive";
-    this.author="john smith";
-    this.authorImg="https://stock.adobe.com/images/happy-smiley-face-or-emoticon-line-art-icon-for-apps-and-websites/112439016";
-    this.time="4.0 hours";
-    this.steps=[ ];
-
-    
-  }
 
   toggleEvent(e) {
     console.log(this.opened);
@@ -151,9 +132,6 @@ export class P2Card extends LitElement {
   render() {
     return html`
     
-    <h1 id="heading">Badges(5)</h1>
-<!--<div class="intro text">introduction</div>-->
- 
 <input type="text" id="getme" placeholder="Search" />
  
   <div>
@@ -168,15 +146,14 @@ export class P2Card extends LitElement {
    
     <!--badge 1-->
   <div class="badge">
-    <div class="name">${this.name}
-      <div class="img">
-        <img src=${this.icon}>
+    <div class="title">${this.title}
+      <div class="image">
+        <img src=${this.image}>
       </div>
  <details class="details" .open="${this.opened}" @toggle="${this.toggleEvent}">
  
       <div>
-        <p class="badgeDescription">
-          ${this.badgeDescription}
+        <p class="description">${this.description}
   
       </p>
       <div class="link">
@@ -185,7 +162,7 @@ export class P2Card extends LitElement {
       </div>
       <div>
         ${this.author} 
-        <img src=${this.authorImg}>
+        <img src=${this.authorImage}>
       </div>
       ${this.time}
       ${this.steps}
