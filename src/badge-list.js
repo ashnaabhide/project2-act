@@ -21,12 +21,19 @@ class BadgeList extends LitElement{
             display: block;
         }
         .wrapper {
-            border: 2px solid black;
-            display: flex;
+            border: 2px;
+            
         }
         .item {
             display: inline-flex;
         }
+        
+    p2-card{
+      margin: 10px;
+      padding: 10px;
+    }
+
+      
     `;
     }
 
@@ -36,7 +43,7 @@ class BadgeList extends LitElement{
         this.badges=[
             {
                 "title": "Amazon Cognito",
-                "image": "https://badgesapp.psu.edu/uploads/badge/image/623/Cognito.png",
+                "icon": "av:games",
                 "description": "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools",
                 "link": "https://docs.aws.amazon.com/cognito/latest/developerguide/tutorials.html", 
                 "author": "Joshua Hantman", 
@@ -95,7 +102,8 @@ class BadgeList extends LitElement{
     render() {
         return html`
         <div class="numBadges">
-            <!--search and filtering function-->
+        <input type="text" id="getme" placeholder="Search" />
+
         </div>
         <div class="wrapper">
         ${this.badges.map(

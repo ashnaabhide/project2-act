@@ -31,7 +31,10 @@ export class P2Card extends LitElement {
   static get styles(){
     return css`
     
-    
+    :host{
+
+    display: block;
+    }
  .wrapper {
         
         background-color: #3e98d3;
@@ -129,28 +132,23 @@ export class P2Card extends LitElement {
   
 
 
-  render() {
-    return html`
-    
-<input type="text" id="getme" placeholder="Search" />
+
+
+
+    render() {
+      return html`
+    <div>
  
-  <div>
-  <div class="wrapper">
-
-
-
-
+    </div>
+    <div>
+    <div class="wrapper">
   
-   
-<!--<img class="image" src="$(meme)"/> -->
-   
-    <!--badge 1-->
   <div class="badge">
     <div class="title">${this.title}
       <div class="image">
-        <img src=${this.image}>
+      <simple-icon icon="editor:bubble-chart">${this.image}</simple-icon>
       </div>
- <details class="details" .open="${this.opened}" @toggle="${this.toggleEvent}">
+ <details class="details" .opened="${this.opened}" @toggle="${this.toggleEvent}">
  
       <div>
         <p class="description">${this.description}
@@ -162,7 +160,7 @@ export class P2Card extends LitElement {
       </div>
       <div>
         ${this.author} 
-        <img src=${this.authorImage}>
+        <simple-icon icon="face">${this.image}</simple-icon>
       </div>
       ${this.time}
       ${this.steps}

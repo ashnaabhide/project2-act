@@ -3,7 +3,7 @@ export default async function handler(request, res) {
     const badgelist = [
         {
             "title": "Amazon Cognito",
-            "image": "https://badgesapp.psu.edu/uploads/badge/image/623/Cognito.png",
+            "icon": "av:games",
             "description": "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools",
             "link": "https://docs.aws.amazon.com/cognito/latest/developerguide/tutorials.html", 
             "author": "Joshua Hantman", 
@@ -11,10 +11,10 @@ export default async function handler(request, res) {
             "time": "4.0 hours"
 
         },
-        
+
         {
             "title": "Amazon I AM",
-            "image": "https://badgesapp.psu.edu/uploads/badge/image/618/AWS-IAM-Exploitation.png.png",
+            "image": "save",
             "description": "Create a I AM account with MFA enabled and Admin permissions",
             "link": "none", 
             "author": "Joshua Hantman", 
