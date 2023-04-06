@@ -154,9 +154,9 @@ export class P2Card extends LitElement {
       <div class="image">
         <img src=${this.image}>
       </div>
- <details class="details" .open="${this.opened}" @toggle="${this.toggleEvent}">
+ <details class="details" .opened="${this.opened}" @toggle="${this.toggleEvent}">
  
-      <div>
+      
         <p class="description">${this.description}
   
       </p>
@@ -175,7 +175,9 @@ export class P2Card extends LitElement {
     </div>
     </div>
     </div>
-  </div>
+
+
+  
  
     `;
   }
