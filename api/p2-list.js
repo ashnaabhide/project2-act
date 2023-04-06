@@ -13,7 +13,7 @@ export default async function handler(request, res) {
         },
 
         {
-            "title": "Amazon I AM",
+            "title": " Amazon I AM",
             "image": "save",
             "description": "Create a I AM account with MFA enabled and Admin permissions",
             "link": "none", 
@@ -23,7 +23,7 @@ export default async function handler(request, res) {
 
         },
         {
-            "title": "Signing Up for AWS Web Services",
+            "title": " Signing Up for AWS Web Services",
             "image": "https://badgesapp.psu.edu/uploads/badge/image/620/amazon-web-services_vxmp.png",
             "description": "Learn how to create a root account with AWS Cloud Services and manage your AWS Console.",
             "link": "none", 
@@ -33,7 +33,7 @@ export default async function handler(request, res) {
 
         },
         {
-            "title": "AWS-Lambda Phase 1",
+            "title": " AWS-Lambda Phase 1",
             "image": "https://badgesapp.psu.edu/uploads/badge/image/619/1-yaTKFg6K8tTPXJtBUZ0_lw.png",
             "description": "AWS Lambda is an event-driven, serverless computing platform provided by Amazon as a part of Amazon Web Services. It is a computing service that runs code in response to events and automatically manages the computing resources required by that code.",
             "link": "https://aws.amazon.com/lambda", 
@@ -44,7 +44,7 @@ export default async function handler(request, res) {
 
         },
         {
-            "title": "Amazon S3 Phase 1", 
+            "title": " Amazon S3 Phase 1", 
             "image": "https://badgesapp.psu.edu/uploads/badge/image/621/1_B9CIOrxdROHvtdmouQA1_A.png",
             "description": "Amazon S3 is all about storage. Learning how to use it and add some static files to it are all part of this badge. S3 stands for Amazon Simple Storage Service.",
             "link": "https://docs.aws.amazon.com/s3/?id=docs_gateway", 
