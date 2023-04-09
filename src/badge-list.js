@@ -97,7 +97,7 @@ class BadgeList extends LitElement{
         
         ];
         this.getSearchResults().then((results) => {
-            this.players = results;
+            this.badges = results;
         });
 
  
@@ -119,7 +119,7 @@ class BadgeList extends LitElement{
 
     async _handleSearchEvent(e) {
         const term = e.detail.value;
-        this.players = await this.getSearchResults(term);
+        this.badges = await this.getSearchResults(term);
     }
 
  
