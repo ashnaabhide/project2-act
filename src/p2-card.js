@@ -149,9 +149,7 @@ export class P2Card extends LitElement {
 
     render() {
       return html`
-    <div>
- 
-    </div>
+    
     <div>
     <div class="wrapper">
  

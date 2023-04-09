@@ -54,12 +54,12 @@ export default async function handler(req, res) {
             "authorImage": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
             "time": "5.0 hours"
  
-        },
+        }
  
     ];
 
     roster.map((badge) => {
-        badge.inex = badge.name.toLowerCase() + " " +  badge.description.toLowerCase() + " " + badge.author.toLowerCase();
+        badge.index = badge.name.toLowerCase() + " " +  badge.description.toLowerCase() + " " + badge.author.toLowerCase();
     });
 
     roster = roster.filter((badge) => {

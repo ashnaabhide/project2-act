@@ -39,17 +39,15 @@ export class SearchWidget extends LitElement {
       return html`
 
       <simple-icon icon="icons:search"></simple-icon>
-      <input type="text" value="${this.value}" @input="${this._handleInput}">
-    
- 
+      <input type="text" value="${this.value}" @input="${this._handleInput}"/>
     `;
-
-    
   }
   _handleInput(e) {
         this.value = e.target.value;
         this.dispatchEvent(new CustomEvent('value-changed', {
-            detail: this.value,
+            detail: {
+                value: this.value,
+              }
         }));
   }
 

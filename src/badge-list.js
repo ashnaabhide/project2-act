@@ -1,5 +1,5 @@
-import "./p2-card.js";
 import { LitElement, html, css } from 'lit';
+import "./p2-card.js";
 import "./search-widget.js";
  
 class BadgeList extends LitElement{
@@ -19,13 +19,13 @@ class BadgeList extends LitElement{
         super();
         this.badges=[];
         this.name = 'Badges(5)';
+        this.updateRoster();
         this.getSearchResults().then((results) => {
             this.badges = results;
         });
  
     }
 
- 
        
     static get styles() {
         return css`
@@ -33,7 +33,7 @@ class BadgeList extends LitElement{
             display: block;
         }
         .wrapper {
-            border: 2px;
+            display: flex;
            
         }
         .item {
@@ -71,12 +71,11 @@ class BadgeList extends LitElement{
         <search-widget @value-changed="${this._handleSearchEvent}"></search-widget>
         </div>
         <div class="wrapper">
-        ${this.badges.map(
-              badge => html`
-                <div class="card">
+        ${this.badges.map(badge => html`
+                <div class="item">
                 <p2-card
  
-                  title="${badge.title}"
+                  name="${badge.name}"
                   image="${badge.image}"
                     description="${badge.description}"
                     link="${badge.link}"
