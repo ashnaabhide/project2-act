@@ -42,17 +42,11 @@
     document.body.addEventListener('open-changed', (e) => {
       document.querySelector('button[data-toggle-btn]').innerText = e.detail.value ? 'hide details' : 'show details';
       console.log('change-open-state', e.detail, e.target);
-    });
+    })
  
-    document.querySelector('button[data-toggle-btn]').addEventListener('click', (e) => {
-  const details = document.querySelector('p2-card').shadowRoot.querySelector('details')
-  console.log(details);
-  if (details.getAttribute('open')) {
-    details.removeAttribute('open');
-  }
-  else {
-    details.setAttribute('open','open');    
-  }
+document.querySelector('button[data-toggle-btn]').addEventListener('click', (e) => {
+  const card = document.querySelector('p2-card');
+  card.opened = !card.opened;
 });
  
    

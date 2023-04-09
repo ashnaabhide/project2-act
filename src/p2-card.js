@@ -8,7 +8,7 @@ export class P2Card extends LitElement {
     return {
       badges: { type: Array },
      
-      name: {
+      title: {
         type: String,
         reflect: true
       },
@@ -46,11 +46,16 @@ export class P2Card extends LitElement {
         border-radius: 5px;
       }
  
+      .title{
+        background-color: lightblue;
+        text-align: left;
+        
+      }
+
       .name{
         width: auto;
         color: black;
         font-family: sans-serif;
-        background-color: lightblue;
         text-align: left;
         font-weight:bold;
         font-size: .6cm;
@@ -94,11 +99,6 @@ export class P2Card extends LitElement {
         font-size: 10px;
         padding: 10px;
         text-align: left;
-        display: none;
-      }
-      .details summary {
-        font-size: 20px;
-        font-weight: bold;
       }
      
     `;
@@ -106,47 +106,53 @@ export class P2Card extends LitElement {
 
 
 
-  toggleEvent(e) {
-    console.log(this.opened);
-    console.log(this.shadowRoot.querySelector('details').getAttribute('open'));
-    const state = this.shadowRoot.querySelector('details').getAttribute('open') === '' ? true : false;
-    console.log(state);
-    this.opened = state;
-  } //listens
- 
-  updated(changedProperties) {
-    changedProperties.forEach((oldValue, propName) => {
-      if(propName === 'opened') {
-        this.dispatchEvent(new CustomEvent('change-open-state',
-        {
-          composed: true, //event occured in shadowroot but you want it to bubble up through page
+  toggleEvent(){
+    if(this.shadowRoot.querySelector('details').getAttribute('open') == ""){
+      this.toggleOpening = true;
+      this.updateSteps(this.title);
+    }
+    else{
+      this.toggleOpening = false;
+      this.isLoading = true;
+    }
+  }
+
+  //Creates new event listener to record when the toggleEvent is invoked
+  updated(changedProperties){
+    changedProperties.forEach((oldValue, propName)=>{
+      if(propName === "toggleOpening"){
+        this.dispatchEvent(new CustomEvent('opened-changed', {
+          composed: true,
           bubbles: true,
           cancelable: false,
-          detail: {
-            value: this[propName]}
-          }));
-          console.log(`${propName} changed. oldValue: ${oldValue}`);
- 
-        }
- 
-        });
-       
- 
-
-    }
+          detail:{
+            value: this[propName]
+          }
+        }));
+        console.log(`${propName} changed. oldValue: ${oldValue}`);
+      }
+    });
+  }
 
     constructor(){
       super();
-      this.name = "Amazon Cognito",
-      this.icon = "av:games",
+      this.name = "Amazon Cognito";
+      this.title = "";
+      this.icon = "av:games";
       this.description = "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools",
       this.link = "www.google.com",
       this.author = "Joshua Hantman",
       this.authorImage = "www.google.com",
-      this.time = "4.0 hours"
+      this.time = "Approximate time to complete: 4.0 hours"
       this.opened = false; 
+      this.spacer = "-----------------------------";
+      this.info = "Steps to Earn This Badge";
+      this.steps = [];
     }
  
+
+
+
 
 
     render() {
@@ -156,24 +162,34 @@ export class P2Card extends LitElement {
     <div class="wrapper">
  
   <div class="badge">
-    <div class="name">${this.name}
-      <div class="image">
+    <div class="title">
+    <div class="name">${this.name} <div class="image">
       <simple-icon icon="editor:bubble-chart">${this.image}</simple-icon>
       </div>
  <details class="details" .opened="${this.opened}" @toggle="${this.toggleEvent}">
  <!-- make a summary tag to remove detail word -->
-      <summary>${this.description}</summary>
-      
+      <summary></summary>
+      <p>${this.description}</p>
       <div class="link">
       <a href=${this.link}>${this.link}</a>
+      <div class="spacer">${this.spacer}</div>
       </div>
       <div>
         ${this.author}
         <simple-icon icon="face">${this.image}</simple-icon>
       </div>
       ${this.time}
-      ${this.steps}
+      <div class="stepInfo">
+        ${this.info}
+    </div>
+    <div class="steps">
+    ${this.steps.map(step => html`
+       <step-card icon="${step.icon}" info="${step.stepDescription}" time="${step.time}">
+      </step-card>
+    `)}
+    </div>
   </details>
+  </div>
       </div>
     </div>
     </div>

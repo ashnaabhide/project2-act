@@ -30,7 +30,7 @@ export class SearchWidget extends LitElement {
 
   constructor(){
     super();
-    this.value = 'Default Value';
+    this.value = 'Search Content, Topics, and People';
 
   }
 
@@ -39,7 +39,7 @@ export class SearchWidget extends LitElement {
       return html`
 
       <simple-icon icon="icons:search"></simple-icon>
-      <input type="text" value="${this.value}" @input="${this._handleInput}"/>
+      <input type="text" placeholder="${this.value}" @input="${this._handleInput}"/>
     `;
   }
   _handleInput(e) {

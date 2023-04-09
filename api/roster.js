@@ -10,10 +10,10 @@ export default async function handler(req, res) {
             "link": "https://docs.aws.amazon.com/cognito/latest/developerguide/tutorials.html",
             "author": "Joshua Hantman",
             "authorImage": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png", 
-            "time": "4.0 hours"
- 
+            "time": "Approxamite time to complete: 4.0 hours"
+    
         },
- 
+    
         {
             "name": " Amazon I AM",
             "image": "save",
@@ -21,8 +21,8 @@ export default async function handler(req, res) {
             "link": "none",
             "author": "Joshua Hantman",
             "authorImage": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
-            "time": "2.0 hours"
- 
+            "time": "Approxamite time to complete: 2.0 hours"
+    
         },
         {
             "name": " Signing Up for AWS Web Services",
@@ -31,8 +31,8 @@ export default async function handler(req, res) {
             "link": "none",
             "author": "Joshua Hantman",
             "authorImage": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
-            "time": "2.0 hours"
- 
+            "time": "Approxamite time to complete: 2.0 hours"
+    
         },
         {
             "name": " AWS-Lambda Phase 1",
@@ -41,9 +41,9 @@ export default async function handler(req, res) {
             "link": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
             "author": "Joshua Hantman",
             "authorImage": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
-            "time": "4.0 hours"
- 
-
+            "time": "Approxamite time to complete: 4.0 hours"
+    
+    
         },
         {
             "name": " Amazon S3 Phase 1",
@@ -52,10 +52,10 @@ export default async function handler(req, res) {
             "link": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
             "author": "Joshua Hantman",
             "authorImage": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
-            "time": "5.0 hours"
- 
+            "time": "Approxamite time to complete: 5.0 hours"
+    
         }
- 
+    
     ];
 
     roster.map((badge) => {
