@@ -30,7 +30,7 @@ export class SearchWidget extends LitElement {
 
   constructor(){
     super();
-    this.value = '';
+    this.value = 'Default Value';
 
   }
 

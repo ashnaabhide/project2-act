@@ -95,6 +95,10 @@ export class P2Card extends LitElement {
         padding: 10px;
         text-align: left;
       }
+      .details summary {
+        font-size: 20px;
+        font-weight: bold;
+      }
      
     `;
   }
@@ -129,6 +133,17 @@ export class P2Card extends LitElement {
  
 
     }
+
+    constructor(){
+      super();
+      this.name = "Amazon Cognito",
+      this.icon = "av:games",
+      this.description = "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools",
+      this.link = "www.google.com",
+      this.author = "Joshua Hantman",
+      this.authorImage = "www.google.com",
+      this.time = "4.0 hours"
+    }
  
 
 
@@ -141,19 +156,16 @@ export class P2Card extends LitElement {
     <div class="wrapper">
  
   <div class="badge">
-    <div class="title">${this.title}
+    <div class="title">${this.name}
       <div class="image">
       <simple-icon icon="editor:bubble-chart">${this.image}</simple-icon>
       </div>
  <details class="details" .opened="${this.opened}" @toggle="${this.toggleEvent}">
  <!-- make a summary tag to remove detail word -->
-      <div>
-        <p class="description">${this.description}
- 
-      </p>
+      <summary>${this.description}</summary>
+      
       <div class="link">
       <a href=${this.link}>${this.link}</a>
- 
       </div>
       <div>
         ${this.author}
