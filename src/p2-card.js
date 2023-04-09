@@ -143,6 +143,7 @@ export class P2Card extends LitElement {
       this.author = "Joshua Hantman",
       this.authorImage = "www.google.com",
       this.time = "4.0 hours"
+      this.opened = false; 
     }
  
 
@@ -154,7 +155,7 @@ export class P2Card extends LitElement {
     <div class="wrapper">
  
   <div class="badge">
-    <div class="title">${this.name}
+    <div class="name">${this.name}
       <div class="image">
       <simple-icon icon="editor:bubble-chart">${this.image}</simple-icon>
       </div>
