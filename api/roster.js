@@ -2,7 +2,7 @@ export default async function handler(req, res) {
 
     const search = req.query.search || '';
  
-    var roster = [
+    const roster = [
         {
             "name": "Amazon Cognito",
             "icon": "av:games",

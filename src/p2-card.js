@@ -46,7 +46,7 @@ export class P2Card extends LitElement {
         border-radius: 5px;
       }
  
-      .title{
+      .name{
         width: auto;
         color: black;
         font-family: sans-serif;
@@ -94,6 +94,7 @@ export class P2Card extends LitElement {
         font-size: 10px;
         padding: 10px;
         text-align: left;
+        display: none;
       }
       .details summary {
         font-size: 20px;
