@@ -13,34 +13,12 @@ class BadgeList extends LitElement{
             name: {type:String},
         }
     }
- 
-       
-    static get styles() {
-        return css`
-        :host {
-            display: block;
-        }
-        .wrapper {
-            border: 2px;
-           
-        }
-        .item {
-            display: inline-flex;
-        }
-       
-    p2-card{
-      margin: 10px;
-      padding: 10px;
-    }
- 
-     
-    `;
-    }
- 
     constructor() {
  
         super();
-        this.badges=[
+        
+        this.badges=[];
+            /*
             {
                 "title": "Amazon Cognito",
                 "icon": "av:games",
@@ -93,13 +71,52 @@ class BadgeList extends LitElement{
                 "time": "5.0 hours"
      
             },
+            
            
    
-        ];
+        ]; */
    
        
  
     }
+
+    updateList() {
+        const address = '/api/badge-list';
+        fetch(address).then((response) => {
+            if(response.ok) {
+                return response.json()
+            }
+            return [];
+
+        })
+        .then((data) => {
+            this.badges = data;
+        })
+    }
+ 
+       
+    static get styles() {
+        return css`
+        :host {
+            display: block;
+        }
+        .wrapper {
+            border: 2px;
+           
+        }
+        .item {
+            display: inline-flex;
+        }
+       
+    p2-card{
+      margin: 10px;
+      padding: 10px;
+    }
+ 
+     
+    `;
+    }
+ 
  
     render() {
         return html`
