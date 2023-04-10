@@ -136,7 +136,7 @@ export class P2Card extends LitElement {
 
     constructor(){
       super();
-      this.name = "Amazon Cognito";
+      this.name = "Amazon";
       this.title = "";
       this.icon = "av:games";
       this.description = "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools",
@@ -148,6 +148,7 @@ export class P2Card extends LitElement {
       this.spacer = "-----------------------------";
       this.info = "Steps to Earn This Badge";
       this.steps = [];
+      
     }
  
 

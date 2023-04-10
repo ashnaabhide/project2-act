@@ -137,6 +137,7 @@ class BadgeList extends LitElement{
                 <p2-card
  
                   title="${badge.title}"
+                  name="${badge.name}"
                   image="${badge.image}"
                     description="${badge.description}"
                     link="${badge.link}"
